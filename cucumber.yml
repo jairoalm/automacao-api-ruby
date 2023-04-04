@@ -1,0 +1,3 @@
+default: -p prd
+prd: ENVIRONMENT="prd"
+local: ENVIRONMENT="local"
