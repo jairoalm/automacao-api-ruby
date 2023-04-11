@@ -1,0 +1,28 @@
+name: Execução de testes regressivos
+
+on:
+  push: 
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 8,16,22 * * 1,2,3,4,5'
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout projeto
+      - uses: actions/checkout@v3
+      
+      - name: Setup Ruby environment
+      - uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: '3.2.1'
+
+      - name: Install dependecies
+        run: bundle install
+
+      - name: Run tests
+        run: bundler exec cucumber -p default -t@regression

@@ -1,0 +1,8 @@
+usuario_valido: 'Wk9NhjfHPivDaT5l'
+usuario_inexistente: 'esteiddeusuarionaodeveexistir'
+usuario_admin:
+  email: patrulha4@qa.com.br
+  password: teste
+usuario_nao_admin:
+  email: Chelsea86@hotmail.com
+  password: 9QFOl4igGVmir0A
