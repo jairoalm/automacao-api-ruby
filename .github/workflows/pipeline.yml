@@ -25,4 +25,5 @@ jobs:
         run: bundle install
 
       - name: Run tests
-        run: bundler exec cucumber -p default -t@regression
+        run: |
+        bundler exec cucumber
