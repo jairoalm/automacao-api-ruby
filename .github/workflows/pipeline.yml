@@ -25,5 +25,4 @@ jobs:
         run: bundle install
 
       - name: Run tests
-        run: |
-        bundler exec cucumber
+        run: bundle exec cucumber
