@@ -1,5 +1,7 @@
-default: -p prd -p html
-default_local: -p local -p html
+default: -p prd 
+# -p html
+default_local: -p local 
+# -p html
 
 # Configurações de reports
 # html: --format pretty --format html --out=reports/report.html
