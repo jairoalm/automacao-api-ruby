@@ -3,8 +3,7 @@ Dado('possuir um token de acesso setado para um usuário do tipo {string}') do |
         Dado possuir um payload de novo usuario do tipo "#{user_type}" para cadastrar
         Quando realizar uma chamada post para uma rota "/usuarios"
         Então validar que foi retornado o status code 201 e a mensagem "Cadastro realizado com sucesso"        
-    }
-    # Então validar que foi criado um novo usuario
+    }    
     payload = {
         'email': @payload[:email],
         'password': @payload[:password]
@@ -16,8 +15,8 @@ Dado('possuir um payload de novo usuario do tipo {string} para cadastrar') do |u
     @payload = Factory::Dynamic.new_valid_user(user_type)
 end
 
-Dado('possuir um payload de um produto válido') do
-    @payload = Factory::Dynamic.new_valid_product
+Dado('possuir um payload de um produto válido') do   
+    @payload = Factory::Dynamic.new_valid_product    
 end
 
 Dado('possuir um produto cadastrado') do
@@ -27,16 +26,17 @@ Dado('possuir um produto cadastrado') do
         Quando realizar uma chamada post para uma rota "/produtos"        
         Então validar que foi retornado o status code 201 e a mensagem "Cadastro realizado com sucesso"
     }
-    # Então validar que um novo produto foi cadastrado com sucesso
+    @id = @response_json["_id"]    
+    log Utils.log_response("GET", @id, @response.body)
 end
-  
+
 Dado('possuir payload com um nome de produto já cadastrado') do
     # Pegando o paylod que foi cadastrado em "possuir um payload de um produto válido" 
     register_product_name = @payload[:nome]
-    # Gerando um novo paylod
+    # Gerando um novo payload
     @payload = Factory::Dynamic.new_valid_product
     # Substituo o nome do novo payload por outro
-    @payload[:nome] = register_product_name
+    @payload[:nome] = register_product_name    
 end
 
 # Então('validar que um novo produto foi cadastrado com sucesso') do
