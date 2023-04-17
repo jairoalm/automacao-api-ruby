@@ -25,5 +25,12 @@ module Factory
                 "quantidade": 5
             }
         end
+
+        def self.new_valid_car(id_product)
+            {
+                "idProduto": id_product,
+                "quantidade": 1                 
+            }
+        end
     end
 end
