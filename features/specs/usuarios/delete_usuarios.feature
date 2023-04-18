@@ -7,17 +7,14 @@ Funcionalidade: Requisições Delete usuários para APIs REST com Excon
     Gostaria de poder realizar chamadas para a API Serverest
     Para poder consumir os seus serviços
 
-@delete_usuario_valido_200
-Cenário: [DELETE] Deletar um usuário existente
-    Dado possuir um novo usuário cadastrado corretamente
-    Quando realizar uma chamada delete para a rota "/usuarios"
-    # Então validar que o usuário foi excluído com sucesso
-    Então validar que foi retornado o status code 200 e a mensagem "Registro excluído com sucesso"
+    @delete_usuario_valido_200
+    Cenário: [DELETE] Deletar um usuário existente
+        Dado possuir um novo usuário cadastrado corretamente
+        Quando realizar uma chamada delete para a rota "/usuarios"
+        Então validar que foi retornado o status code 200 e a mensagem "Registro excluído com sucesso"
 
-
-@delete_usuario_invalido_200
-Cenário: [DELETE] Tentar excluir um usuário que não existe
-    Dado possuir um id de usuário "usuario_inexistente"
-    Quando realizar uma chamada delete para a rota "/usuarios"
-    # Então validar que não é possível excluir um usuário inexistente
-    Então validar que foi retornado o status code 200 e a mensagem "Nenhum registro excluído"
+    @delete_usuario_invalido_200
+    Cenário: [DELETE] Tentar excluir um usuário que não existe
+        Dado possuir um id de usuário "usuario_inexistente"
+        Quando realizar uma chamada delete para a rota "/usuarios"    
+        Então validar que foi retornado o status code 200 e a mensagem "Nenhum registro excluído"

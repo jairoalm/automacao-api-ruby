@@ -29,4 +29,4 @@ Cenário: [PUT] Validar que não é possível criar um usuário com e-mail já e
     E possuir um id de usuário "usuario_inexistente"
     Quando realizar uma chamada put para a rota "/usuarios"
     # Então validar que não foi possível criar um novo usuario  
-    Então validar que foi retornado o status code 400 e a mensagem "Este email já está sendo usado"    
+    Então validar que foi retornado o status code 400 e a mensagem "Este email já está sendo usado"  

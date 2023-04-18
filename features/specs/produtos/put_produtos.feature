@@ -1,6 +1,6 @@
 #language: pt
-
 @regression
+@regression_produtos
 @put_produtos
 Funcionalidade: Requisições PUT produtos para APIs REST com Excon
     Como uma aplicação teste

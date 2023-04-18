@@ -5,4 +5,6 @@ usuario_admin:
   password: teste
 usuario_nao_admin:
   email: Chelsea86@hotmail.com
-  password: 9QFOl4igGVmir0A
+  password: 9QFOl4igGVmir0A  
+produto_inexistente: "444JKJHJKHJKgfdfgjhdgj" 
+carrinho_inexistente: "qbMqntef4iTOwWfk"

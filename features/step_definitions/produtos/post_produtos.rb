@@ -1,20 +1,3 @@
-Dado('possuir um token de acesso setado para um usuário do tipo {string}') do |user_type|
-    steps %{
-        Dado possuir um payload de novo usuario do tipo "#{user_type}" para cadastrar
-        Quando realizar uma chamada post para uma rota "/usuarios"
-        Então validar que foi retornado o status code 201 e a mensagem "Cadastro realizado com sucesso"        
-    }    
-    payload = {
-        'email': @payload[:email],
-        'password': @payload[:password]
-    }   
-    @serverest_api.set_access_token(payload)
-end
-
-Dado('possuir um payload de novo usuario do tipo {string} para cadastrar') do |user_type|
-    @payload = Factory::Dynamic.new_valid_user(user_type)
-end
-
 Dado('possuir um payload de um produto válido') do   
     @payload = Factory::Dynamic.new_valid_product    
 end
@@ -26,7 +9,7 @@ Dado('possuir um produto cadastrado') do
         Quando realizar uma chamada post para uma rota "/produtos"        
         Então validar que foi retornado o status code 201 e a mensagem "Cadastro realizado com sucesso"
     }
-    @id = @response_json["_id"]    
+    @id = @response_json["_id"]   
     log Utils.log_response("GET", @id, @response.body)
 end
 

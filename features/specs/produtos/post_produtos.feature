@@ -1,6 +1,7 @@
 #language: pt
 
 @regression
+@regression_produtos
 @post_produtos
 Funcionalidade: Requisições Post produtos para APIs REST com Excon
     Como uma aplicação teste
